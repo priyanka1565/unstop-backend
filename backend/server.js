@@ -2,9 +2,11 @@ const express = require("express");
 const SeatRouter = require("./routes/SeatRoute");
 const app = express()
 const connect = require("./connection/database")
+const cors = require("cors");
 
 // GLOBAL MIDDLEWARE 
 app.use(express.json());
+app.use(cors())
 
 require("dotenv").config;
 
