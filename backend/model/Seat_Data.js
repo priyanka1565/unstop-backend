@@ -12,25 +12,13 @@ const seatSchema = new mongoose.Schema(
       type: Number,
       required: true,
     },
-    seat_status: {
+    seat_row: {
       type: Number,
       required: true,
-      Comment: "101-active/102-inactive",
-      default:101,
-    },
-    total_seat: {
-      type: Number,
-    },
-    seat_map: {
-      type:String,
-    },
-    is_available: {
-      type: Boolean,
-      default: false,
     },
     is_booked: {
-      type: Boolean,
-      default: false,
+      type: Number,
+      default: 0,
     },
   },
   { timestamps: true }
