@@ -1,0 +1,94 @@
+// all api information 
+
+1. create a seat
+ api : http://localhost:5000/book-my-seat/create-seat
+request:
+ {
+    "seat_name":"1",
+    "seat_number": 1,
+    "row_number":1,
+    "start_of_current_row":1,
+    "end_of_current_row":1,
+    "total_seat":80,
+    "current_row_book_count":1
+}
+response:
+{
+    "message": "Seat Created Successfully",
+    "data": []
+}
+2. get seat 
+api :http://localhost:5000/book-my-seat/get-seat
+
+request:
+{
+    "seat_name":"a1",
+    "seat_number": a1,
+    "seat_status" :101,
+    "total_row":80,
+    "current_row":1
+}
+
+response:
+{
+    "message": "Seat Get Successfully",
+    "data": [
+        {
+            "_id": "64857c79ad228da3ed57ea0b",
+            "seat_name": "a1",
+            "seat_number": 1,
+            "seat_status": 101,
+            "total_seat": 79,
+            "seat_map": "{\"seat_number\":1,\"row_number\":1,\"start_of_current_row\":1,\"end_of_current_row\":7,\"current_row_book_count\":1}",
+            "is_available": false,
+            "is_booked": false,
+            "createdAt": "2023-06-11T07:49:13.878Z",
+            "updatedAt": "2023-06-11T08:28:02.806Z",
+            "__v": 0
+        },
+        {
+            "_id": "64858a8a5f8085dbce7c3668",
+            "seat_name": "a2",
+            "seat_number": 2,
+            "seat_status": 101,
+            "total_seat": 78,
+            "seat_map": "{\"seat_number\":2,\"row_number\":1,\"start_of_current_row\":1,\"end_of_current_row\":7,\"current_row_book_count\":6}",
+            "is_available": false,
+            "is_booked": false,
+            "createdAt": "2023-06-11T08:49:14.061Z",
+            "updatedAt": "2023-06-11T08:49:14.061Z",
+            "__v": 0
+        },
+        {
+            "_id": "6486b8b5ff239326b0e6fcf7",
+            "seat_name": "a3",
+            "seat_number": 3,
+            "seat_status": 101,
+            "total_seat": 77,
+            "seat_map": "{\"seat_number\":1,\"row_number\":1,\"start_of_current_row\":1,\"end_of_current_row\":1,\"current_row_book_count\":1}",
+            "is_available": false,
+            "is_booked": false,
+            "createdAt": "2023-06-12T06:18:29.380Z",
+            "updatedAt": "2023-06-12T06:18:29.380Z",
+            "__v": 0
+        }
+    ]
+}
+
+3. Book Seat
+api: http://localhost:5000/book-my-seat/book-seat
+
+request:
+{
+     "seat_number":2
+
+}
+response:
+{
+    "message": "seat is confirm with this seat number 2",
+    "data": {
+        "row_available_seat": 5,
+        "total_available_seat": 78
+    }
+}
+
